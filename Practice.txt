@@ -1,3 +1,8 @@
+Did not install any dependencies aside from express, ejs, nodemon. 
+    - Just installed the body-parser dependency 
+    - Installed bootstrap and working on creating seperate directories for 
+    "views", "editing", "deleting" and "styling". 
+    - Renamed "index.js" to "server.js" to cause less confusion. 
 Trying again......3rd time starting over...
 Practice again....
 Starting from scratch. 

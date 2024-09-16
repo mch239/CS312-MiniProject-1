@@ -1,3 +1,11 @@
+
+
+`${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
+**This is to get the full date. 
+Somehow get this on the home page bottom. 
+
+*can't use 'moment' dependency from npmjs.com as its no longer available
+
 Did not install any dependencies aside from express, ejs, nodemon. 
     - Just installed the body-parser dependency 
     - Installed bootstrap and working on creating seperate directories for 
@@ -7,4 +15,10 @@ Trying again......3rd time starting over...
 Practice again....
 Starting from scratch. 
 
-Trying for a second trial. 
+Trying for a second trial. clear
+
+<div class="logo">
+      <img src="/public/partials/images/logo.png" width="300" alt="">
+    </div>
+
+     <img src="public/partials/images/logo.png" alt="" class="logo">

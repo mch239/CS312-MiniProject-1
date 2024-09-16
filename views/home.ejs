@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CS312 Mini Blog Project</title>
+    <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+    <%- include('../public/partials/header.ejs') %>
+        <% if (blogList.length < 1) { %>
+            <h1 class="no-blog-title">
+                No blogs yet. <br> So you need to write one.
+            </h1>
+            <% } else {%>
+                <h1 class="title">Blogs R' Us<br>What do <i>you</i> want to do?</h1>
+                <% } %>
+
+                    <div class="overflow-div">
+                        <div class="home-container">
+                            <% if (locals.blogList) { %>
+                                <% for( let index=0; index < blogList.length; index++ ) { %>
+                                    <div class="blog-card">
+                                        <span class="blog-number">
+                                            <%= index+ 1 %>
+                                        </span>
+                                        <h4>
+                                            <%= blogList[index].title %>
+                                        </h4>
+                                        <p>
+                                            <%= blogList[index].description?.slice(0,300) %>
+                                                <% if (blogList[index].description?.length> 299) { %> ...
+                                                    <a class="view-button" href="/blogDetails/<%= blogList[index].id %>">
+                                                        View Blog</a>
+                                                    <% } %>
+                                        </p>
+                                        <div class="btn-wrapper">
+                                            <form action="/delete/<%= blogList[index].id %>" method="post">
+                                                <button class="delete-button">Delete</button>
+                                            </form>
+                                            <a class="edit-button" href="/edit/<%=  blogList[index].id %>">Edit</a>
+                                        </div>
+                                    </div>
+                                    <% } %>
+                                        <% } else { %>
+                                            <h1>NO Blogs here</h1>
+
+                                            <% } %>
+                        </div>
+                    </div>
+
+                    <%- include('../public/partials/footer.ejs') %>
+</body>
+
+</html>

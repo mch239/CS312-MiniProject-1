@@ -3,15 +3,13 @@ import bodyParser from "body-parser";
 import { dirname, join } from "path";
 import { fileURLToPath } from "url";
 
-
-
 const app = express();
 const port = 3000;
 
 //middleware?
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: false }));
-app.use('/', index);
+
 
 //Path definition
 const __dirname = dirname(fileURLToPath(import.meta.url));
